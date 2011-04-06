@@ -48,3 +48,13 @@
  * Inflector::rules('plural', array('rules' => array(), 'irregular' => array(), 'uninflected' => array()));
  *
  */
+$f = new Folder(APP . 'plugins');
+		$files = $f->read();
+		foreach($files[0] as $file)
+		{
+			if(file_exists(APP . 'plugins' . DS . $file . DS . 'config' . DS . 'bootstrap.php'))
+			{
+				require_once APP . 'plugins' . DS . $file . DS . 'config' . DS . 'bootstrap.php';
+			}
+		}
+?>

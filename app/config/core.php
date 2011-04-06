@@ -85,7 +85,7 @@
  *
  * [Note Routing.admin is deprecated in 1.3.  Use Routing.prefixes instead]
  */
-	//Configure::write('Routing.prefixes', array('admin'));
+	Configure::write('Routing.prefixes', array('admin'));
 
 /**
  * Turn off all caching application-wide.
@@ -121,7 +121,7 @@
  * Set the value of 'Session.save' to <name> to utilize it in CakePHP.
  *
  * To use database sessions, run the app/config/schema/sessions.php schema using
- * the cake shell command: cake schema create Sessions
+ * the cake shell command: cake schema run create Sessions
  *
  */
 	Configure::write('Session.save', 'php');
@@ -170,7 +170,7 @@
  * Session time out time (in seconds).
  * Actual value depends on 'Security.level' setting.
  */
-	Configure::write('Session.timeout', '120');
+	Configure::write('Session.timeout', '1000');
 
 /**
  * If set to false, sessions are not automatically started.
@@ -179,8 +179,7 @@
 
 /**
  * When set to false, HTTP_USER_AGENT will not be checked
- * in the session. You might want to set the value to false, when dealing with
- * older versions of IE, Chrome Frame or certain web-browsing devices and AJAX
+ * in the session
  */
 	Configure::write('Session.checkAgent', true);
 
@@ -189,24 +188,24 @@
  * in 'Session.timeout' is multiplied according to the settings here.
  * Valid values:
  *
- * 'high'   Session timeout in 'Session.timeout' x 10
- * 'medium' Session timeout in 'Session.timeout' x 100
- * 'low'    Session timeout in 'Session.timeout' x 300
+ * 'high'	Session timeout in 'Session.timeout' x 10
+ * 'medium'	Session timeout in 'Session.timeout' x 5040
+ * 'low'		Session timeout in 'Session.timeout' x 2628000
  *
  * CakePHP session IDs are also regenerated between requests if
  * 'Security.level' is set to 'high'.
  */
-	Configure::write('Security.level', 'medium');
+	Configure::write('Security.level', 'low');
 
 /**
  * A random string used in security hashing methods.
  */
-	Configure::write('Security.salt', 'DYhG93b0qyJfIxfs2guVoUubWwvniR2G0FgaC9m1');
+	Configure::write('Security.salt', 'DllaksjdfakhflahKLjfhklsfskjaaskjhi');
 
 /**
  * A random numeric string (digits only) used to encrypt/decrypt strings.
  */
-	Configure::write('Security.cipherSeed', '76859309657453542496749683641');
+	Configure::write('Security.cipherSeed', '984351681657613566131311135468765');
 
 /**
  * Apply timestamps with the last modified time to static assets (js, css, images).
@@ -301,3 +300,4 @@
  *
  */
 	Cache::config('default', array('engine' => 'File'));
+        
